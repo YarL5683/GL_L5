@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/admin/CLionProjects/untitled7/binHash.cpp
+binHash.h
+C:/Users/admin/CLionProjects/untitled7/binHash.h
+iostream
+-
+chrono
+-
+
+C:/Users/admin/CLionProjects/untitled7/binHash.h
+checker.h
+C:/Users/admin/CLionProjects/untitled7/checker.h
+sstream
+-
+list
+-
+
+C:/Users/admin/CLionProjects/untitled7/checker.h
+sstream
+-
+

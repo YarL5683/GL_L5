@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/admin/CLionProjects/untitled7/checker.cpp
+iostream
+-
+checker.h
+C:/Users/admin/CLionProjects/untitled7/checker.h
+string
+-
+fstream
+-
+
+C:/Users/admin/CLionProjects/untitled7/checker.h
+sstream
+-
+
