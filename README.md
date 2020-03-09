@@ -10,4 +10,4 @@ myhash 687 937870 1923855 50063
 in hashMap function BadWord is copy function DataChecker
 it was created to record all the bad words
 and fulfill the condition 2.c 
-(время на чтение-запись, вывод в консоль и т.д. не учитывается!)
+(РІСЂРµРјСЏ РЅР° С‡С‚РµРЅРёРµ-Р·Р°РїРёСЃСЊ, РІС‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ Рё С‚.Рґ. РЅРµ СѓС‡РёС‚С‹РІР°РµС‚СЃСЏ!)
