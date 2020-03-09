@@ -2,7 +2,6 @@
 #define UNTITLED7_BINHASH_H
 
 #include "checker.h"
-#include <sstream>
 #include <list>
 
 class BinHash : public Checker{

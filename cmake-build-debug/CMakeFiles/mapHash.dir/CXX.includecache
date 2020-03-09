@@ -13,14 +13,16 @@ sstream
 C:/Users/admin/CLionProjects/untitled7/hashMap.cpp
 hashMap.h
 C:/Users/admin/CLionProjects/untitled7/hashMap.h
-list
--
 chrono
+-
+fstream
 -
 
 C:/Users/admin/CLionProjects/untitled7/hashMap.h
 checker.h
 C:/Users/admin/CLionProjects/untitled7/checker.h
-unordered_map
+map
+-
+list
 -
 

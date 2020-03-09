@@ -1,6 +1,4 @@
-#include <string>
 #include "VecHash.h"
-#include <iostream>
 #include <chrono>
 
 VecHash::VecHash(){
@@ -14,7 +12,7 @@ void VecHash::LoadDict(void)
 
     std::string dict_item;
 
-    //start dictionary load
+    //start texts checking
     start = std::chrono::system_clock::now();
 
     while(dict_stream >> dict_item)
@@ -22,7 +20,7 @@ void VecHash::LoadDict(void)
         Add(dict_item,String_hash((dict_item)));
     }
 
-    //end dictionary load
+    //end texts checking
     end = std::chrono::system_clock::now();
 
     data.dict_load_time= std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
@@ -35,7 +33,7 @@ void VecHash::DataChecking()
     //start texts checking
     start = std::chrono::system_clock::now();
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < book_number; i++)
     {
         std::stringstream data_stream(books[i]);
         std::string books_item;

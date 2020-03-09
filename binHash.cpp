@@ -1,7 +1,6 @@
 #include "binHash.h"
-
-#include <iostream>
 #include <chrono>
+
 BinHash::BinHash()
 {
     root = nullptr;
@@ -17,10 +16,12 @@ void BinHash::LoadDict()
 
     //start dictionary load
     start = std::chrono::system_clock::now();
+
     while(dict_stream >> dict_item)
     {
         Add(root, dict_item,String_hash((dict_item)));
     }
+
     //end dictionary load
     end = std::chrono::system_clock::now();
 
@@ -34,7 +35,7 @@ void BinHash::DataChecking()
     //start texts checking
     start = std::chrono::system_clock::now();
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < book_number; i++)
     {
         std::stringstream data_stream(books[i]);
         std::string books_item;
@@ -42,11 +43,13 @@ void BinHash::DataChecking()
         while (data_stream >> books_item)
         {
             data.all_word++;
+
             if(!Find(root, String_hash(books_item), books_item))
                 data.not_found_word++;
         }
     }
-    //end dictionary load
+
+    //end texts checking
     end = std::chrono::system_clock::now();
 
     data.text_processing_time = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();

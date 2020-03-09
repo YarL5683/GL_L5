@@ -2,7 +2,8 @@
 #define UNTITLED7_HASHMAP_H
 
 #include "checker.h"
-#include <unordered_map>
+#include <map>
+#include <list>
 
 class HashMap : public Checker{
 public:
@@ -11,10 +12,12 @@ public:
     void LoadDict() override;
     void DataChecking() override;
 
+    //function to writing incorrect words
+    void BadWord();
     ~HashMap();
 
 private:
-    std::unordered_map <int, std::list<std::string>> work;
+    std::map <int, std::list<std::string>> work;
 };
 
 #endif //UNTITLED7_HASHMAP_H

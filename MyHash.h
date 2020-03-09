@@ -2,8 +2,8 @@
 #define UNTITLED7_MYHASH_H
 
 #include "checker.h"
-#include <list>
 #include <vector>
+
 class MyHash : public Checker{
 
 public:
@@ -20,9 +20,8 @@ private:
         std::string word;
     };
 
-   friend bool operator== (const node&, const node&);
 
-    std::vector<node> work;
+    std::string work[52];
 };
 
 #endif //UNTITLED7_MYHASH_H

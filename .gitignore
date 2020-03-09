@@ -1,5 +1,6 @@
 #Clion file
-.idea/workspace.xml.
+.idea/workspace.xml
+.cmake-build-debug/
 
 # Prerequisites
 *.d

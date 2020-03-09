@@ -7,10 +7,12 @@ class Checker{
 public:
     Checker::Checker();
     void PrintResult();
+    Checker::~Checker();
 private:
     void ReadFile(std::string&, const std::string&);
     void ReadDictionary(std::string&, const std::string&);
 
+    //All result out for each hash type
     struct result{
         std::string hash_name;
         double dict_load_time;
@@ -19,12 +21,14 @@ private:
         int not_found_word; //All not found word in all file
     };
 
-    static const int book_number = 5;
+
     bool Allowed_symbol(const char&);
 
 protected:
     virtual void LoadDict()=0;
     virtual void DataChecking()=0;
+
+    static const int book_number = 5;
 
     static std::string dict;
     static std::string books[book_number];

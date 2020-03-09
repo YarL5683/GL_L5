@@ -9,8 +9,6 @@
 C:/Users/admin/CLionProjects/untitled7/MyHash.h
 checker.h
 C:/Users/admin/CLionProjects/untitled7/checker.h
-list
--
 vector
 -
 
@@ -23,8 +21,6 @@ vector
 C:/Users/admin/CLionProjects/untitled7/binHash.h
 checker.h
 C:/Users/admin/CLionProjects/untitled7/checker.h
-sstream
--
 list
 -
 
@@ -35,7 +31,9 @@ sstream
 C:/Users/admin/CLionProjects/untitled7/hashMap.h
 checker.h
 C:/Users/admin/CLionProjects/untitled7/checker.h
-unordered_map
+map
+-
+list
 -
 
 C:/Users/admin/CLionProjects/untitled7/main.cpp

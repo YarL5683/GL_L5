@@ -1,9 +1,6 @@
-//
-// Created by admin on 08.03.2020.
-//
-
 #include "MyHash.h"
 #include <chrono>
+#include <fstream>
 
 MyHash::MyHash()
 {
@@ -19,20 +16,17 @@ void MyHash::LoadDict()
 
     //start dictionary load
     start = std::chrono::system_clock::now();
-    while(dict_stream >> dict_item)
-    {
-        node unit;
-        unit.hash=String_hash(dict_item);
-        unit.word=dict_item;
 
-        work.push_back(unit);
+    while(dict_stream >> dict_item) {
+        //Add new word to dictionary
+        work[dict_item[0]*2-2*'a'].append(" "+dict_item+ " ");
     }
+
     //end dictionary load
     end = std::chrono::system_clock::now();
 
-    data.dict_load_time= std::chrono::duration_cast<std::chrono::seconds>(end-start).count();
+    data.dict_load_time= std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 }
-
 
 void MyHash::DataChecking() {
     std::chrono::time_point<std::chrono::system_clock> start, end;
@@ -40,38 +34,27 @@ void MyHash::DataChecking() {
     //start texts checking
     start = std::chrono::system_clock::now();
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < book_number; i++)
     {
         std::stringstream data_stream(books[i]);
         std::string books_item;
+
         while (data_stream >> books_item)
         {
             data.all_word++;
 
-            auto vec_start = work.begin();
-            auto vec_end = work.end();
-
-            node temp;
-            temp.word=books_item;
-            temp.hash=String_hash(books_item);
-
-            if(std::find(vec_start, vec_end, temp)==vec_end)
+            if(work[books_item[0]*2-2*'a'].find(" "+books_item+" ")==std::string::npos)
             {
                 data.not_found_word++;
             }
         }
     }
-    //end dictionary load
+
+    //end texts checking
     end = std::chrono::system_clock::now();
-
-    data.text_processing_time = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
+    data.text_processing_time += std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 }
-
 
 
 MyHash::~MyHash()
 {}
-
-bool operator==(const MyHash::node& p1, const MyHash::node &p2) {
-    return p1.hash == p2.hash && p1.word==p2.word;
-}

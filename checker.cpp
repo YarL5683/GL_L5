@@ -4,7 +4,7 @@
 #include <fstream>
 
 std::string Checker::dict;
-std::string Checker::books[5];
+std::string Checker::books[book_number];
 
 Checker::Checker()
 {
@@ -19,7 +19,7 @@ Checker::Checker()
 
     //Read&format books for test (allowed only a-z, ' ', '`')
     std::string books_name[book_number] {"alice.txt", "dracula.txt", "holmes.txt", "sherlock.txt", "tolstoy.txt"};
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < book_number; i++)
     {
         if(books[i].empty())
             ReadFile(books[i], "texts\\"+books_name[i]);
@@ -33,7 +33,7 @@ void Checker::ReadDictionary(std::string & stringD, const std::string& filename)
     if (rStream.is_open()) {
         std::string word;
         while (rStream >> word)
-            stringD.append(word+' ');
+            stringD.append(" "+word+" ");
     }
 
     rStream.close();
@@ -89,10 +89,15 @@ int Checker::String_hash(const std::string& data)
     int hash = 1;
 
     for(int i = 0; i < data.size(); i++)
-        data[i]%2==0? hash-=data[i]*3*data[0]*data[i+1-1]: hash+=data[data.size()-1]*data[i]*2*data[i+1-1];
+        data[i]%2==0? hash-=data[i]*(data[0]%11): hash+=data[data.size()-1]*(data[i]%13);
 
     if(hash<0)
         hash *= -1;
 
     return hash;
+}
+
+Checker::~Checker()
+{
+
 }

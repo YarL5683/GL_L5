@@ -4,11 +4,16 @@
 #include "MyHash.h"
 
 int main() {
+
     HashMap a;
 
     a.LoadDict();
     a.DataChecking();
     a.PrintResult();
+/*
+    //This function for write bad word in .txt
+    //Copy DataChecking, but does not count time
+    a.BadWord();
 
     BinHash b;
 
@@ -27,6 +32,6 @@ int main() {
     d.LoadDict();
     d.DataChecking();
     d.PrintResult();
-
+*/
     return 0;
 }

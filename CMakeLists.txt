@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(untitled7)
 
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_EXE main.cpp)
 #Parent&Children lib
