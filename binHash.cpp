@@ -63,14 +63,14 @@ void BinHash::Add(std::shared_ptr<node>& leaf,const std::string& inp_str, int ha
     {
         if(hash_str > leaf->hash_data){
             Add(leaf->right, inp_str, hash_str);
-	}
-        else{
-            Add(leaf->left, inp_str,hash_str);
-	}
+	    }
+        else {
+            Add(leaf->left, inp_str, hash_str);
+        }
 
         if(hash_str == leaf->hash_data){
             leaf->chain.push_back(inp_str);
-	}
+	    }
     }
     else
     {
@@ -90,22 +90,17 @@ bool BinHash::Find(const std::shared_ptr<node>& current, int inp_hash, const std
         {
             auto find_word =  std::find(current->chain.begin(), current->chain.end(), word);
 	    
-	    return (find_word != current->chain.end());
+	        return (find_word != current->chain.end());
         }
-        
-        
+
         if (inp_hash > current->hash_data){
            return Find(current->right, inp_hash, word);
-	   }
+	    }
            
         return Find(current->left, inp_hash, word);
-		
-		
-        
     }
     
     return false;
-    
 }
 
 BinHash::~BinHash() = default;
