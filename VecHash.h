@@ -24,7 +24,6 @@ private:
     void Add(std::string, int);
     bool Find(std::string, int);
 
-    //word_size to choose bucket
    std::vector<list_node> bucket[20];
 };
 #endif //UNTITLED7_VECHASH_H

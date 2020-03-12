@@ -2,10 +2,10 @@
 #include <chrono>
 
 VecHash::VecHash(){
-    data.hash_name="vecthash";
+    data.hash_name="stdvect";
 }
 
-void VecHash::LoadDict(void)
+void VecHash::LoadDict()
 {
     std::stringstream dict_stream(dict);
     std::chrono::time_point<std::chrono::system_clock> start, end;

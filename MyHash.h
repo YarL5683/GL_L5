@@ -20,7 +20,6 @@ private:
         std::string word;
     };
 
-
     std::string work[52];
 };
 
