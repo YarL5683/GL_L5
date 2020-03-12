@@ -21,8 +21,8 @@ private:
 
    friend bool operator== (const list_node&, const list_node&);
 
-    void Add(std::string, int);
-    bool Find(std::string, int);
+    void Add(const std::string&, int);
+    bool Find(const std::string&, int);
 
    std::vector<list_node> bucket[20];
 };

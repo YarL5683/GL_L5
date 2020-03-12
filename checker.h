@@ -5,9 +5,9 @@
 
 class Checker{
 public:
-    Checker::Checker();
+    Checker();
     void PrintResult();
-    Checker::~Checker();
+    ~Checker();
 private:
     void ReadFile(std::string&, const std::string&);
     void ReadDictionary(std::string&, const std::string&);

@@ -41,8 +41,9 @@ void VecHash::DataChecking()
         while (data_stream >> books_item)
         {
             data.all_word++;
-            if(!Find(books_item, String_hash(books_item)))
+            if(!Find(books_item, String_hash(books_item))){
                 data.not_found_word++;
+		}
         }
     }
     //end dictionary load
@@ -51,7 +52,7 @@ void VecHash::DataChecking()
     data.text_processing_time = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 }
 
-void VecHash::Add(std::string inp_str, int hash_data)
+void VecHash::Add(const std::string& inp_str, int hash_data)
 {
     list_node temp;
 
@@ -66,22 +67,19 @@ bool operator==(const VecHash::list_node& p1, const VecHash::list_node& p2){
     return p1.hash_data == p2.hash_data && p1.data==p2.data;
 }
 
-bool VecHash::Find(std::string bucket_n, int word_hash){
+bool VecHash::Find(const std::string& bucket_n, int word_hash){
     auto begin = bucket[bucket_n.size()%20].begin();
     auto end = bucket[bucket_n.size()%20].end();
 
     list_node example;
     example.data=bucket_n;
-    example.hash_data=String_hash(bucket_n);
+    example.hash_data=word_hash;
 
     if(std::find(begin, end, example) != end){
         return true;
-    }
-    else{
-        return false;
-    }
+    	}
+
+    return false;
 };
 
-VecHash::~VecHash() {
-
-}
+VecHash::~VecHash() =default;
