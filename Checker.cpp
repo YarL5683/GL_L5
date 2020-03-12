@@ -1,4 +1,5 @@
-#include "checker.h"
+#include "Checker.h"
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -85,19 +86,8 @@ void Checker::PrintResult() {
             << data.not_found_word << "\n";
 }
 
-int Checker::String_hash(const std::string& data) {
-  int hash = 1;
+//int Checker::String_hash(const std::string& data) {
 
-  for (int i = 0; i < data.size(); i++) {
-    data[i] % 2 == 0 ? hash -= data[i] * (data[0] % 11)
-                     : hash += data[data.size() - 1] * (data[i] % 13);
-  }
-
-  if (hash < 0) {
-    hash *= -1;
-  }
-
-  return hash;
-}
+//}
 
 Checker::~Checker() = default;

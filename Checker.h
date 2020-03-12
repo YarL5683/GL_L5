@@ -35,7 +35,6 @@ class Checker {
 
   result data;
 
-  int String_hash(const std::string&);
 };
 
-#endif  // UNTITLED7_CHECKER_H
+#endif  //UNTITLED7_CHECKER_H

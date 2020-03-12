@@ -3,7 +3,7 @@
 
 #include <list>
 #include <map>
-#include "checker.h"
+#include "Checker.h"
 
 class HashMap : public Checker {
  public:
@@ -20,4 +20,4 @@ class HashMap : public Checker {
   std::map<int, std::list<std::string>> work;
 };
 
-#endif  // UNTITLED7_HASHMAP_H
+#endif  //UNTITLED7_HASHMAP_H

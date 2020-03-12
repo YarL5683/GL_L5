@@ -1,4 +1,5 @@
-#include "hashMap.h"
+#include "HashFunction.h"
+#include "HashMap.h"
 #include <algorithm>
 #include <chrono>
 #include <fstream>
@@ -16,7 +17,7 @@ void HashMap::LoadDict() {
 
   while (dict_stream >> dict_item) {
     // Add new word to dictionary
-    work[String_hash(dict_item)].push_back(dict_item);
+    work[Str2hash(dict_item)].push_back(dict_item);
   }
 
   // end dictionary load
@@ -40,8 +41,8 @@ void HashMap::DataChecking() {
     while (data_stream >> books_item) {
       data.all_word++;
 
-      auto list_start = work[String_hash(books_item)].begin();
-      auto list_end = work[String_hash(books_item)].end();
+      auto list_start = work[Str2hash(books_item)].begin();
+      auto list_end = work[Str2hash(books_item)].end();
 
       if (std::find(list_start, list_end, books_item) == list_end) {
         data.not_found_word++;
@@ -71,8 +72,8 @@ void HashMap::BadWord() {
     while (data_stream >> books_item) {
       data.all_word++;
 
-      auto list_start = work[String_hash(books_item)].begin();
-      auto list_end = work[String_hash(books_item)].end();
+      auto list_start = work[Str2hash(books_item)].begin();
+      auto list_end = work[Str2hash(books_item)].end();
 
       if (std::find(list_start, list_end, books_item) == list_end) {
         data.not_found_word++;

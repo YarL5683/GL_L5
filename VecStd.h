@@ -1,17 +1,17 @@
-#ifndef UNTITLED7_VECHASH_H
-#define UNTITLED7_VECHASH_H
+#ifndef UNTITLED7_VECSTD_H
+#define UNTITLED7_VECSTD_H
 
 #include <vector>
-#include "checker.h"
+#include "Checker.h"
 
-class VecHash : public Checker {
+class VecStd : public Checker {
  public:
-  VecHash();
+  VecStd();
 
   void LoadDict() override;
   void DataChecking() override;
 
-  ~VecHash();
+  ~VecStd();
 
  private:
   struct list_node {
@@ -26,4 +26,4 @@ class VecHash : public Checker {
 
   std::vector<list_node> bucket[20];
 };
-#endif  // UNTITLED7_VECHASH_H
+#endif  //UNTITLED7_VECSTD_H

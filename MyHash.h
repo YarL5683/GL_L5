@@ -2,7 +2,7 @@
 #define UNTITLED7_MYHASH_H
 
 #include <vector>
-#include "checker.h"
+#include "Checker.h"
 
 class MyHash : public Checker {
  public:

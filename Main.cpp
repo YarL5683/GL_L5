@@ -1,7 +1,8 @@
+
 #include "MyHash.h"
-#include "VecHash.h"
-#include "binHash.h"
-#include "hashMap.h"
+#include "VecStd.h"
+#include "BinTree.h"
+#include "HashMap.h"
 
 int main() {
   HashMap a;
@@ -14,13 +15,13 @@ int main() {
   // Copy DataChecking, but does not count time
   a.BadWord();
 
-  BinHash b;
+  BinTree b;
 
   b.LoadDict();
   b.DataChecking();
   b.PrintResult();
 
-  VecHash c;
+  VecStd c;
 
   c.LoadDict();
   c.DataChecking();
