@@ -1,6 +1,5 @@
 #include "MyHash.h"
 #include <chrono>
-//#include <fstream>
 
 MyHash::MyHash() { data.hash_name = "myhash"; }
 

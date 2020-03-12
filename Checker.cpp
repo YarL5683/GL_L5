@@ -23,7 +23,7 @@ Checker::Checker() {
                                       "sherlock.txt", "tolstoy.txt"};
   for (int i = 0; i < book_number; i++) {
     if (books[i].empty()) {
-      ReadFile(books[i], "texts\\" + books_name[i]);
+      ReadFile(books[i], "./texts//" + books_name[i]);
     }
   }
 }
