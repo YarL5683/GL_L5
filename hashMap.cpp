@@ -1,4 +1,5 @@
 #include "hashMap.h"
+#include <algorithm>
 #include <chrono>
 #include <fstream>
 
@@ -91,6 +92,4 @@ void HashMap::BadWord()
 }
 
 
-HashMap::~HashMap(){
-
-}
+HashMap::~HashMap() = default;

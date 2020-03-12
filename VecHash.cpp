@@ -1,5 +1,6 @@
 #include "VecHash.h"
 #include <chrono>
+#include <algorithm>
 
 VecHash::VecHash(){
     data.hash_name="stdvect";
@@ -75,11 +76,7 @@ bool VecHash::Find(const std::string& bucket_n, int word_hash){
     example.data=bucket_n;
     example.hash_data=word_hash;
 
-    if(std::find(begin, end, example) != end){
-        return true;
-    	}
-
-    return false;
+    return (std::find(begin, end, example) != end);
 };
 
 VecHash::~VecHash() =default;

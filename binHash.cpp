@@ -1,4 +1,5 @@
 #include "binHash.h"
+#include <algorithm>
 #include <chrono>
 
 BinHash::BinHash()
@@ -44,8 +45,9 @@ void BinHash::DataChecking()
         {
             data.all_word++;
 
-            if(!Find(root, String_hash(books_item), books_item))
+            if(!Find(root, String_hash(books_item), books_item)){
                 data.not_found_word++;
+		}
         }
     }
 
@@ -55,17 +57,20 @@ void BinHash::DataChecking()
     data.text_processing_time = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 }
 
-void BinHash::Add(std::shared_ptr<node>& leaf, std::string inp_str, int hash_str)
+void BinHash::Add(std::shared_ptr<node>& leaf,const std::string& inp_str, int hash_str)
 {
     if(leaf != nullptr)
     {
-        if(hash_str > leaf->hash_data)
+        if(hash_str > leaf->hash_data){
             Add(leaf->right, inp_str, hash_str);
-        else
+	}
+        else{
             Add(leaf->left, inp_str,hash_str);
+	}
 
-        if(hash_str == leaf->hash_data)
+        if(hash_str == leaf->hash_data){
             leaf->chain.push_back(inp_str);
+	}
     }
     else
     {
@@ -84,25 +89,23 @@ bool BinHash::Find(const std::shared_ptr<node>& current, int inp_hash, const std
         if (current->hash_data == inp_hash)
         {
             auto find_word =  std::find(current->chain.begin(), current->chain.end(), word);
-            if(find_word != current->chain.end())
-                return true;
-            else
-                return false;
+	    
+	    return (find_word != current->chain.end());
         }
-        else
-        {
-            if (inp_hash > current->hash_data)
-                return Find(current->right, inp_hash, word);
-            else
-                return Find(current->left, inp_hash, word);
-        }
+        
+        
+        if (inp_hash > current->hash_data){
+           return Find(current->right, inp_hash, word);
+	   }
+           
+        return Find(current->left, inp_hash, word);
+		
+		
+        
     }
-    else{
-                return false;
-    }
+    
+    return false;
+    
 }
 
-BinHash::~BinHash()
-{
-
-}
+BinHash::~BinHash() = default;

@@ -3,6 +3,7 @@
 
 #include "checker.h"
 #include <list>
+#include <memory>
 
 class BinHash : public Checker{
 public:
@@ -23,7 +24,7 @@ private:
         std::shared_ptr<node> right;
         };
 
-    void Add(std::shared_ptr<node>& , std::string, int);
+    void Add(std::shared_ptr<node>& ,const std::string&, int);
     bool Find(const std::shared_ptr<node>&, int, const std::string&);
 
     std::shared_ptr<node> root;

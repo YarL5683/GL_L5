@@ -56,5 +56,4 @@ void MyHash::DataChecking() {
 }
 
 
-MyHash::~MyHash()
-{}
+MyHash::~MyHash() = default;
