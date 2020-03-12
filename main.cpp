@@ -1,37 +1,36 @@
-#include "hashMap.h"
-#include "binHash.h"
-#include "VecHash.h"
 #include "MyHash.h"
+#include "VecHash.h"
+#include "binHash.h"
+#include "hashMap.h"
 
 int main() {
+  HashMap a;
 
-    HashMap a;
+  a.LoadDict();
+  a.DataChecking();
+  a.PrintResult();
 
-    a.LoadDict();
-    a.DataChecking();
-    a.PrintResult();
+  // This function for write bad word in .txt
+  // Copy DataChecking, but does not count time
+  a.BadWord();
 
-    //This function for write bad word in .txt
-    //Copy DataChecking, but does not count time
-    a.BadWord();
+  BinHash b;
 
-    BinHash b;
+  b.LoadDict();
+  b.DataChecking();
+  b.PrintResult();
 
-    b.LoadDict();
-    b.DataChecking();
-    b.PrintResult();
+  VecHash c;
 
-    VecHash c;
+  c.LoadDict();
+  c.DataChecking();
+  c.PrintResult();
 
-    c.LoadDict();
-    c.DataChecking();
-    c.PrintResult();
+  MyHash d;
 
-    MyHash d;
+  d.LoadDict();
+  d.DataChecking();
+  d.PrintResult();
 
-    d.LoadDict();
-    d.DataChecking();
-    d.PrintResult();
-
-    return 0;
+  return 0;
 }

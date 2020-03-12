@@ -1,29 +1,29 @@
 #ifndef UNTITLED7_VECHASH_H
 #define UNTITLED7_VECHASH_H
 
-#include "checker.h"
 #include <vector>
+#include "checker.h"
 
-class VecHash : public Checker{
-public:
-    VecHash();
+class VecHash : public Checker {
+ public:
+  VecHash();
 
-    void LoadDict() override;
-    void DataChecking() override ;
+  void LoadDict() override;
+  void DataChecking() override;
 
-    ~VecHash();
-private:
+  ~VecHash();
 
-    struct list_node{
-        std::string data;
-        int hash_data;
-    };
+ private:
+  struct list_node {
+    std::string data;
+    int hash_data;
+  };
 
-   friend bool operator== (const list_node&, const list_node&);
+  friend bool operator==(const list_node&, const list_node&);
 
-    void Add(const std::string&, int);
-    bool Find(const std::string&, int);
+  void Add(const std::string&, int);
+  bool Find(const std::string&, int);
 
-   std::vector<list_node> bucket[20];
+  std::vector<list_node> bucket[20];
 };
-#endif //UNTITLED7_VECHASH_H
+#endif  // UNTITLED7_VECHASH_H
